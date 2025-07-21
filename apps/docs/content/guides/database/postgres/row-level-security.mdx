@@ -38,6 +38,7 @@ You can just think of them as adding a `WHERE` clause to every query. For exampl
 create policy "Individuals can view their own todos."
 on todos for select
 using ( (select auth.uid()) = user_id );
+ 
 ```
 
 .. would translate to this whenever a user tries to select from the todos table:
